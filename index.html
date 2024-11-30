@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свободный Дозор</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Свободный Дозор</h1>
+        <form id="reportForm">
+            <div class="input-group">
+                <label for="time">Время (чч:мм-чч:мм):</label>
+                <input type="text" id="time" placeholder="05:00-06:00" required>
+            </div>
+
+            <div class="input-group">
+                <label for="userInput">Имя или ID:</label>
+                <input type="text" id="userInput" placeholder="Имя или ID" required>
+                <small>Если вы оруженосец, вводите ID.</small>
+            </div>
+
+            <div class="input-group">
+                <label for="route">Выберите маршрут:</label>
+                <select id="route">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="screenshotOrChecker">Скриншот или проверяющий:</label>
+                <input type="text" id="screenshot" placeholder="Прямая ссылка на скриншот">
+                <input type="text" id="checkerName" placeholder="Имя проверяющего">
+                <small>Укажите одно из полей.</small>
+            </div>
+
+            <div class="input-group">
+                <label>Были нарушители?</label>
+                <label><input type="radio" name="violators" value="no" checked> Нет</label>
+                <label><input type="radio" name="violators" value="yes"> Да</label>
+            </div>
+
+            <div id="violatorSection" class="input-group hidden">
+                <label for="violators">Введите имена и ID нарушителей:</label>
+                <input type="text" id="violators" placeholder="Имя (ID), Имя (ID)">
+            </div>
+
+            <button type="button" id="generateReport">Сгенерировать отчет</button>
+        </form>
+
+        <div id="output" class="output hidden">
+            <h2>Ваш отчет:</h2>
+            <pre id="reportText"></pre>
+        </div>
+    </div>
+    <footer>Создано Бедокуром</footer>
+    <script src="script.js"></script>
+</body>
+</html>
